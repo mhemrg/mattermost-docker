@@ -5,7 +5,7 @@ ENV PATH="/mattermost/bin:${PATH}"
 ENV MM_VERSION=5.17.0
 
 # Build argument to set Mattermost edition
-ARG edition=enterprise
+ARG edition=team
 ARG PUID=2000
 ARG PGID=2000
 ARG MM_BINARY=
@@ -51,6 +51,3 @@ CMD ["mattermost"]
 
 # Expose port 8000 of the container
 EXPOSE 8000
-
-# Declare volumes for mount point directories
-VOLUME ["/mattermost/data", "/mattermost/logs", "/mattermost/config", "/mattermost/plugins", "/mattermost/client/plugins"]
